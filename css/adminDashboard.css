@@ -1,0 +1,544 @@
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInRight {
+  animation-name: slideInRight;
+}
+
+#managing {
+  display: flex;
+}
+
+#adminPage {
+  background-image: url("../assets/adminDashboard.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#eventBoard {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 550px;
+  filter: drop-shadow(10px);
+  border-radius: 30px;
+  margin-top: 5%;
+  margin-left: 8%;
+  margin-right: 10%;
+  width: 85%;
+  animation-name: slideInRight;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+#tableContainer {
+  max-height: 800px; /* Adjust this height as necessary */
+  max-width: 2000px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 20px 0; /* Space between the table and buttons */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+th,
+td {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid rgb(255, 255, 255, 0);
+}
+
+th {
+  background-color: #444444;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: transparent;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+@media (max-width: 600px) {
+  table {
+    font-size: 16px;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+}
+
+.editEvent {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: rgb(31, 31, 31);
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 0px 0px 2px rgb(212, 209, 255);
+  margin-left: 10.5px;
+}
+.bar {
+  width: 50%;
+  height: 2px;
+  background-color: rgb(229, 229, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 2px;
+}
+.bar::before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  background-color: rgb(126, 117, 255);
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 5px white;
+}
+.bar1::before {
+  transform: translateX(-4px);
+}
+.bar2::before {
+  transform: translateX(4px);
+}
+.editEvent:hover .bar1::before {
+  transform: translateX(4px);
+}
+.editEvent:hover .bar2::before {
+  transform: translateX(-4px);
+}
+
+.addEvent {
+  /* Config start */
+  --plus_sideLength: 2.5rem;
+  --plus_topRightTriangleSideLength: 0.9rem;
+  /* Config end */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15%;
+  border: 1px solid white;
+  width: var(--plus_sideLength);
+  height: 42.4px;
+  background-color: #000000;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px 2px rgb(212, 209, 255);
+}
+
+.addEvent::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 0 var(--plus_topRightTriangleSideLength)
+    var(--plus_topRightTriangleSideLength) 0;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.addEvent:hover {
+  cursor: pointer;
+}
+
+.addEvent:hover::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.addEvent:focus-visible::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.addEvent > .plusIcon {
+  fill: white;
+  width: calc(var(--plus_sideLength) * 0.7);
+  height: calc(var(--plus_sideLength) * 0.7);
+  z-index: 1;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.addEvent:hover > .plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+.addEvent:focus-visible > .plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+
+.export {
+  /* Config start */
+  --plus_sideLength: 2.5rem;
+  --plus_topRightTriangleSideLength: 0.9rem;
+  /* Config end */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 15px;
+  border: 1px solid white;
+  width: var(--plus_sideLength);
+  height: 42.4px;
+  background-color: #000000;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px 2px rgb(212, 209, 255);
+}
+
+.export::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-width: 0 var(--plus_topRightTriangleSideLength)
+    var(--plus_topRightTriangleSideLength) 0;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.export:hover {
+  cursor: pointer;
+}
+
+.export:hover::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.export:focus-visible::before {
+  --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
+}
+
+.export > .plusIcon {
+  fill: white;
+  width: calc(var(--plus_sideLength) * 0.7);
+  height: calc(var(--plus_sideLength) * 0.7);
+  z-index: 1;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.export:hover > .plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+.export:focus-visible > .plusIcon {
+  fill: black;
+  transform: rotate(180deg);
+}
+
+/* From Uiverse.io by boryanakrasteva */
+.deleteEvent {
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border: none;
+  box-shadow: 0px 0px 0px 2px rgb(212, 209, 255);
+}
+
+.deleteEvent::after {
+  content: "delete";
+  position: absolute;
+  top: -130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(168, 7, 7);
+  padding: 4px 8px;
+  border-radius: 5px;
+  transition: 0.2s linear;
+  transition-delay: 0.2s;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.icon {
+  transform: scale(1.2);
+  transition: 0.2s linear;
+}
+
+.deleteEvent:hover > .icon {
+  transform: scale(1.5);
+}
+
+.deleteEvent:hover > .icon path {
+  fill: rgb(168, 7, 7);
+}
+
+.deleteEvent:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: -160%;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: white;
+    
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: black;
+  }
+  /* text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    margin-left: 10px;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: 0.3s;
+  }
+  /* hover effect on button width */
+  .logout:hover {
+    background-color: black;
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: 0.3s;
+  }
+  
+  .logout:hover .sign {
+    width: 30%;
+    transition-duration: 0.3s;
+    padding-left: 20px;
+  }
+  
+  .logout:hover .sign svg path {
+    fill: white;
+  }
+  
+  /* hover effect button's text */
+  .logout:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: 0.3s;
+    padding-right: 1px;
+  }
+  /* button click effect*/
+  .logout:active {
+    transform: translate(2px, 2px);
+  }
+  
+  /* From Uiverse.io by elijahgummer */ 
+ul {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+  margin-left: 40%;
+  margin-bottom: -1%;
+}
+
+ul li {
+  position: relative;
+  list-style: none;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 60px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: 0.5s;
+}
+
+ul li:hover {
+  width: 180px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  opacity: 0;
+  transition: 0.5s;
+}
+
+ul li:hover::before {
+  opacity: 1;
+}
+
+ul li::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  background: linear-gradient(45deg, var(--i), var(--j));
+  transition: 0.5s;
+  filter: blur(15px);
+  z-index: -1;
+  opacity: 0;
+}
+
+ul li:hover::after {
+  opacity: 0.5;
+}
+
+ul li .icon {
+  color: #777;
+  font-size: 1.75em;
+  transition: 0.5s;
+  transition-delay: 0.25s;
+}
+
+ul li:hover .icon {
+  transform: scale(0);
+  color: #fff;
+  transition-delay: 0s;
+}
+
+ul li span {
+  position: absolute;
+}
+
+ul li .title {
+  color: #fff;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform: scale(0);
+  transition: 0.5s;
+  transition-delay: 0s;
+}
+
+ul li:hover .title {
+  transform: scale(1);
+  transition-delay: 0.25s;
+}
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  border-radius: 20px;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%; /* Full width on smaller screens */
+    margin: 10% auto; /* More margin for spacing */
+    padding: 15px; /* Reduced padding */
+  }
+
+  .close {
+    font-size: 24px; /* Smaller close button text */
+  }
+}

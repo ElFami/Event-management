@@ -1,0 +1,207 @@
+@keyframes slideInRight {
+    from {
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .slideInRight {
+    animation-name: slideInRight;
+  }
+  
+
+#editPage {
+  background-image: url("../assets/adminDashboard.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#editBox {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 400px;
+  filter: drop-shadow(10px);
+  border-radius: 30px;
+  margin-top: 10%;
+  margin-left: 8%;
+  width: 85%;
+  border: 10px solid rgba(0, 0, 0, 0.6);
+  animation-name: slideInRight;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+
+#column1,
+#column2 {
+  width: 48%; /* This makes each column take almost half of the width */
+}
+
+#eventName,
+#eventDetail {
+  margin-bottom: 5px;
+  padding-top: 20px;
+}
+
+/* From Uiverse.io by coslac */
+/* From Uiverse.io by Smit-Prajapati */
+#event {
+  display: flex;
+  background: white;
+  border-radius: 1rem;
+  background: linear-gradient(173deg, #23272f 0%, #14161a 100%);
+  box-shadow: 10px 10px 20px #0e1013, -10px -10px 40px #383e4b;
+  padding: 0.3rem;
+  gap: 0.3rem;
+}
+
+.input-container input {
+  border-radius: 0.8rem;
+  background: #23272f;
+  box-shadow: inset 5px 5px 10px #0e1013, inset -5px -5px 10px #383e4b,
+    0px 0px 100px rgba(255, 212, 59, 0), 0px 0px 100px rgba(255, 102, 0, 0);
+  width: 100%;
+  flex-basis: 100%;
+  padding: 1rem;
+  border: none;
+  border: 1px solid transparent;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-container input:focus {
+  border: 1px solid #ffd43b;
+  outline: none;
+  box-shadow: inset 0px 0px 10px rgba(255, 102, 0, 0.5),
+    inset 0px 0px 10px rgba(255, 212, 59, 0.5),
+    0px 0px 100px rgba(255, 212, 59, 0.5), 0px 0px 100px rgba(255, 102, 0, 0.5);
+}
+
+@media (max-width: 500px) {
+  .input-container {
+    flex-direction: column;
+  }
+
+  .input-container input {
+    border-radius: 0.8rem;
+  }
+}
+
+#eventName input,
+#eventDetail input,
+#eventDetail textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#otherDetails {
+  margin-top: 20px;
+}
+
+#otherDetails input,
+#otherDetails select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+
+button {
+    width: 160px;
+    line-height: 40px;
+    font-weight: 500px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0;
+    background: #fbeaeb;
+    position: relative;
+    z-index: 2;
+    color: #fbeaeb;
+    perspective: 300px;
+    transform-style: preserve-3d;
+    border-radius: 6px;
+    border: none;
+  }
+  
+  button:hover {
+    color: rgb(31, 31, 31);
+  }
+  
+  button::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 500px;
+    background: rgb(31, 31, 31);
+    border-radius: 6px;
+    z-index: -1;
+    transform-origin: center bottom;
+    transform: rotateX(0);
+    transition: all 0.3s ease;
+  }
+  
+  button:hover::after {
+    transform: rotateX(-180deg);
+  }
+  
+  button {
+    width: 160px;
+    line-height: 40px;
+    font-weight: 500px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0;
+    background: #fbeaeb;
+    position: relative;
+    z-index: 2;
+    color: #fbeaeb;
+    perspective: 300px;
+    transform-style: preserve-3d;
+    border-radius: 6px;
+    border: none;
+  }
+  
+  button:hover {
+    color: rgb(31, 31, 31);
+  }
+  
+  button::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: 500px;
+    background: rgb(31, 31, 31);
+    border-radius: 6px;
+    z-index: -1;
+    transform-origin: center bottom;
+    transform: rotateX(0);
+    transition: all 0.3s ease;
+  }
+  
+  button:hover::after {
+    transform: rotateX(-180deg);
+  }
+  

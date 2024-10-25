@@ -1,0 +1,13 @@
+{
+    "name": "t0shiba/admin",
+    "description": "Tugas",
+    "autoload": {
+        "psr-4": {
+            "T0shiba\\Admin\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "phpoffice/phpspreadsheet": "dev-master"
+    }
+}
